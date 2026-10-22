@@ -1,0 +1,10 @@
+var S=[["Computer Maintenance","Basic laptop hardware maintenance","Beginner","Laptop hardware practice"],["Mobile Device Repair","Basic smartphone troubleshooting and repair","Beginner","Phone repair practice"],["Windows Installation","Windows 10 and 11 installation and reformatting","Beginner","Windows installation practice"],["Office Applications","Microsoft Excel basics","Beginner","Spreadsheets"],["Office Applications","Microsoft Word and PowerPoint basics","Beginner","Documents and presentations"],["Software Support","Installing and updating everyday applications","Beginner","Windows setup"]];
+var areas=["All"].concat(S.map(function(r){return r[0]}).filter(function(v,i,a){return a.indexOf(v)===i}));
+var tabs=document.getElementById("tabs"),sk=document.getElementById("sk"),cur="All";
+function draw(){sk.innerHTML=S.filter(function(r){return cur==="All"||r[0]===cur}).map(function(r){return"<tr><td>"+r[0]+"</td><td>"+r[1]+"</td><td class='lvl'>"+r[2]+"</td><td>"+r[3]+"</td></tr>"}).join("");
+ tabs.innerHTML=areas.map(function(a){return"<button class='"+(a===cur?"on":"")+"' data-a='"+a+"'>"+a+"</button>"}).join("")}
+tabs.addEventListener("click",function(e){if(e.target.dataset.a){cur=e.target.dataset.a;draw()}});draw();
+document.getElementById("y").textContent=new Date().getFullYear();
+var r=document.documentElement;try{var t=localStorage.getItem("th");if(t)r.setAttribute("data-theme",t)}catch(e){}
+document.getElementById("theme").onclick=function(){var d=r.getAttribute("data-theme")!=="light";var n=d?"light":"dark";r.setAttribute("data-theme",n);try{localStorage.setItem("th",n)}catch(e){}};
+document.getElementById("cf").onsubmit=function(ev){ev.preventDefault();var b=encodeURIComponent(document.getElementById("m").value+"\n\n— "+document.getElementById("n").value+" ("+document.getElementById("e").value+")");location.href="mailto:firstname.lastname@gmail.com?subject=Portfolio%20Inquiry&body="+b;document.getElementById("st").textContent="Opening your email app…"};

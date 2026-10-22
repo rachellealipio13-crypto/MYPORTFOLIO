@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My BSIT Industry-Ready Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#5b0303;--card:rgba(30,0,0,.28);--ink:#fff7f1;--mute:#ffd6c5;--line:rgba(255,218,170,.2);--acc:#ffbc6d;--acc2:#ffd966;--hero:linear-gradient(135deg,#9d0202 0%,#d61117 32%,#770407 100%);--hero-ink:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f6e7e7;--card:rgba(255,255,255,.7);--ink:#3b0b0b;--mute:#7b4141;--line:rgba(94,18,18,.14);--acc:#b82a1d;--acc2:#d49f2d;--hero:linear-gradient(135deg,#f8d4d4,#f1a7a3 42%,#c31818 100%);--hero-ink:#fff}
+:root[data-theme="light"] .btn.s{color:var(--ink);border-color:rgba(20,33,61,.42)}
+html{scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{isolation:isolate;position:relative;margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(26,2,2,.48),rgba(26,2,2,.58)),url("portfolio-background.jpg");background-size:100% 100%,180% auto;background-position:center,30% 50%;background-repeat:no-repeat;animation:wallpaperPan 24s ease-in-out infinite alternate}
+@keyframes wallpaperPan{from{background-position:center,30% 50%}to{background-position:center,70% 50%}}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.2;margin:0 0 .5rem}
+a{color:var(--acc)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(26,2,2,.18);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:.5rem;padding:.6rem 1rem}
+nav .brand,nav .brand:visited{color:var(--acc);text-decoration:none;white-space:nowrap}
+nav b{font-family:"Space Grotesk";color:var(--acc);margin-right:auto;white-space:nowrap}
+nav .links{display:flex;gap:.25rem;overflow-x:auto;max-width:70%}
+nav .links a{color:var(--mute);text-decoration:none;font-size:.82rem;padding:.3rem .6rem;border-radius:99px;white-space:nowrap}
+nav .links a:hover{background:var(--line);color:var(--ink)}
+button,.btn{font:inherit;cursor:pointer;border:0;border-radius:10px;padding:.7rem 1.2rem;font-weight:600;text-decoration:none;display:inline-block}
+.btn.p{background:var(--acc2);color:#1a1200}.btn.s{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+#theme{background:var(--line);color:var(--ink);padding:.3rem .6rem}
+header.hero{background:transparent;color:var(--hero-ink);padding:1.5rem 1.25rem 0;position:relative;overflow:hidden;box-shadow:inset 0 0 80px rgba(0,0,0,.08)}
+.wrap{max-width:1120px;width:100%;margin:0 auto;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch;gap:1.5rem;min-height:560px}
+.hero-copy{align-self:center;padding:2rem 0 2.5rem;position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4rem)}
+.hero .tag{color:#ffe2b1;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}
+.hero p{max-width:560px;opacity:.9}
+.hero-photo{align-self:end;justify-self:center;width:100%;display:flex;align-items:flex-end;justify-content:center;position:relative;z-index:1}
+.hero-photo img{display:block;width:min(100%,520px);max-height:590px;object-fit:contain;object-position:center bottom;filter:saturate(.94) contrast(1.02) drop-shadow(0 12px 30px rgba(42,8,8,.36))}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.chip{background:rgba(255,227,177,.12);border:1px solid rgba(255,255,255,.18);padding:.25rem .8rem;border-radius:99px;font-size:.85rem}
+section{max-width:1000px;margin:0 auto;padding:3rem 1.25rem 1rem}
+section>h2{font-size:1.7rem;display:flex;align-items:center;gap:.6rem}
+section>h2 span{background:var(--acc);color:#04201c;font-size:.8rem;padding:.2rem .6rem;border-radius:8px}
+.sub{color:var(--mute);margin:0 0 1.2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.2rem;backdrop-filter:blur(8px)}
+.card h3{font-size:1.1rem}
+.certificate-card{padding:.8rem}
+.certificate-card a{display:block}
+.certificate-card img{display:block;width:100%;aspect-ratio:1086/768;object-fit:cover;background:#fff;border-radius:8px}
+.certificate-card h3{margin:.9rem .4rem .4rem}
+.certificate-card p{margin:.25rem .4rem .5rem;color:var(--mute);font-size:.9rem}
+.project-preview{display:block;width:100%;height:auto;margin:.8rem 0;border:1px solid var(--line);border-radius:8px;background:#fff}
+.badge{display:inline-block;font-size:.72rem;padding:.1rem .55rem;border-radius:99px;background:var(--line);color:var(--mute);margin:.15rem .15rem 0 0}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:14px;backdrop-filter:blur(8px)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--mute);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+tr:last-child td{border-bottom:0}
+.lvl{font-weight:600;color:var(--acc)}
+.bar{height:6px;background:var(--line);border-radius:9px;margin-top:.35rem;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.tabs button{background:var(--card);color:var(--mute);border:1px solid var(--line);padding:.4rem .9rem;border-radius:99px;font-size:.85rem}
+.tabs button.on{background:var(--acc);color:#04201c;border-color:var(--acc)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;margin-bottom:.6rem}
+summary{cursor:pointer;font-weight:600}
+details dl{margin:.7rem 0 0;display:grid;grid-template-columns:130px 1fr;gap:.35rem .8rem;font-size:.92rem}
+details dt{color:var(--mute)}details dd{margin:0}
+.note{border-left:4px solid var(--acc2);background:var(--card);padding:.8rem 1rem;border-radius:0 10px 10px 0;margin:1rem 0;font-size:.92rem;backdrop-filter:blur(8px)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding:.5rem 0 .5rem 2.4rem;position:relative;border-bottom:1px dashed var(--line)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:.45rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--acc);color:#04201c;font-weight:700;display:grid;place-items:center;font-size:.8rem}
+.ph{color:var(--acc2);font-weight:600}
+form{display:grid;gap:.7rem}
+input,textarea{font:inherit;padding:.7rem;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+footer{text-align:center;color:var(--mute);padding:3rem 1rem 2rem;font-size:.85rem}
+.employability-video{display:block;width:100%;height:auto;margin:.75rem 0;border-radius:10px;background:#000}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;min-height:0}.hero-photo{grid-row:1}.hero-photo img{width:min(76vw,350px);max-height:380px}.hero-copy{padding:1rem 0 2.5rem}}
+@media(max-width:560px){details dl{grid-template-columns:1fr}nav .links{max-width:55%}.hero{text-align:center}.hero-grid{gap:.5rem}.hero-photo img{width:min(76vw,300px);max-height:320px}.hero p{margin-left:auto;margin-right:auto}.hero .chips{justify-content:center}}
+</style>
+</head>
+<body>
+<nav>
+ <a class="brand" href="#home" aria-label="Rachelle Ann Alipio — Home"><b>Rachelle Ann Alipio</b></a>
+ <div class="links">
+  <a href="#profile">Profile</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#solving">Problem-Solving</a><a href="#employ">Employability</a><a href="#resume">Resume</a><a href="#certs">Certificates</a><a href="#github">GitHub</a><a href="#linkedin">LinkedIn</a><a href="#contact">Contact</a><a href="#reflect">Reflection</a>
+ </div>
+ <button id="theme" aria-label="Toggle theme">◐</button>
+</nav>
+
+<header class="hero" id="home">
+ <div class="wrap">
+  <div class="hero-grid">
+   <div class="hero-copy">
+    <div class="tag">BSIT Graduate · Datamex College of Saint Adeline</div>
+    <h1>Hi, I'm <span class="ph">Rachelle Ann B. Alipio</span>.<br>I build &amp; fix IT systems.</h1>
+    <p>BSIT graduate preparing for an entry-level <span class="ph">IT Support / Help Desk or Computer Technician Trainee</span> role. My current skills include basic computer maintenance, Windows installation, hardware and software troubleshooting, Wi-Fi support, and Microsoft Office applications.</p>
+    <div class="chips"><span class="chip">Computer Maintenance</span><span class="chip">Windows Installation</span><span class="chip">Troubleshooting</span><span class="chip">Basic Networking</span><span class="chip">Office Applications</span><span class="chip">Software Support</span></div>
+    <a class="btn p" href="#projects">VIEW MY PROJECTS</a>
+    <a class="btn s" href="resume.pdf" target="_blank" rel="noopener">DOWNLOAD RESUME</a>
+    <a class="btn s" href="#contact">CONTACT ME</a>
+   </div>
+   <div class="hero-photo">
+    <img src="profile-home.png" alt="Portrait of Rachelle Ann B. Alipio">
+   </div>
+  </div>
+ </div>
+</header>
+
+<section id="profile">
+ <h2><span>01</span> Professional Profile</h2>
+ <p class="sub">Who I am, what I know, and where I'm going.</p>
+ <div class="grid">
+  <div class="card"><h3>About Me</h3>
+   <p>I am a BSIT graduate from Datamex College of Saint Adeline preparing for an entry-level IT Support, Help Desk, or Computer Technician Trainee role. My current skills include basic laptop maintenance, Windows 10/11 installation, software setup and updates, and troubleshooting common computer and Wi-Fi issues. I also have beginner experience with Excel, Word, and PowerPoint. I enjoy helping users work through technical problems, and I am continuing to build my skills through practice.</p></div>
+  <div class="card"><h3>Professional Statement</h3>
+   <p>“As a BSIT graduate, I bring beginner-level, hands-on skills in <span class="ph">laptop maintenance and computer troubleshooting</span>, <span class="ph">Windows 10/11 installation</span>, <span class="ph">software installation and updates</span>, <span class="ph">basic Wi-Fi troubleshooting</span>, and <span class="ph">Microsoft Excel, Word, and PowerPoint</span>. I am seeking an entry-level IT Support, Help Desk, or Computer Technician Trainee role where I can use these skills to assist users, resolve common technical issues, and continue learning.”</p>
+   <span class="badge">Career focus: IT Support / Help Desk</span></div>
+ </div>
+ <div class="note"><b>Principle:</b> NO EVIDENCE = NO SKILL CLAIM. Every skill below links to a project or proof.</div>
+</section>
+
+<section id="skills">
+ <h2><span>02</span> Technical Skills</h2>
+ <p class="sub">Honest levels, with evidence. Filter by area.</p>
+ <div class="tabs" id="tabs"></div>
+ <div class="tbl"><table><thead><tr><th>Area</th><th>Skill</th><th>Level</th><th>Evidence / Project</th></tr></thead><tbody id="sk"></tbody></table></div>
+</section>
+
+<section id="projects">
+ <h2><span>03</span> Projects</h2>
+ <p class="sub">Selected academic projects, system documentation, and design work.</p>
+ <div class="grid">
+  <div class="card"><h3>Project 1 · Eskinita Apparel</h3><p>BSIT capstone documentation for an inventory management and online ordering system for a local streetwear business.</p>
+   <span class="badge">System Documentation</span><span class="badge">Inventory</span><span class="badge">Online Ordering</span>
+   <a href="projects/eskinita-apparel-framework.png" target="_blank" rel="noopener" aria-label="Open Eskinita Apparel system framework"><img class="project-preview" src="projects/eskinita-apparel-framework.png" alt="Input-process-output framework for the Eskinita Apparel e-commerce system" loading="lazy" decoding="async"></a>
+   <a href="projects/eskinita-apparel-system-documentation.docx" download>Download System Documentation</a><br><br><a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">Live Demo</a> · <a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="card"><h3>Project 2 · ONLYJOBS Login Flowchart</h3><p>Flowchart showing the email and Gmail login choices, account checks, database paths, and homepage flow.</p>
+   <span class="badge">System Flowchart</span><span class="badge">Authentication</span>
+   <a href="projects/onlyjobs-login-flowchart.png" target="_blank" rel="noopener" aria-label="Open ONLYJOBS login flowchart"><img class="project-preview" src="projects/onlyjobs-login-flowchart.png" alt="ONLYJOBS email login flowchart" loading="lazy" decoding="async"></a>
+   <a href="projects/onlyjobs-login-flowchart.png" target="_blank" rel="noopener">Open Flowchart</a><br><br><a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">Live Demo</a> · <a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">GitHub</a></div>
+  <div class="card"><h3>Project 3 · Arduino Gas Leakage Alarm</h3><p>Team prototype documented with an Arduino Uno, MQ-5 gas sensor, LCD, and buzzer, including assembly, testing, and troubleshooting.</p>
+   <span class="badge">Arduino Uno</span><span class="badge">MQ-5 Sensor</span><span class="badge">LCD</span><span class="badge">Buzzer</span>
+   <a href="projects/arduino-gas-alarm-prototype.jpeg" target="_blank" rel="noopener" aria-label="Open Arduino gas leakage alarm photo"><img class="project-preview" src="projects/arduino-gas-alarm-prototype.jpeg" alt="Completed Arduino gas leakage alarm prototype with gas leak warning label, LCD, sensor, and buzzer" loading="lazy" decoding="async"></a>
+   <a href="projects/arduino-gas-leak-alarm-presentation.pptx" download>Download Project Presentation</a><br><br><a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">Live Demo</a> · <a href="https://github.com/rachellealipio13-crypto/project" target="_blank" rel="noopener">GitHub</a></div>
+ </div>
+</section>
+
+<section id="solving">
+ <h2><span>04</span> Problem-Solving</h2>
+ <p class="sub">Practice scenarios connected to my current skills in basic networking, Windows installation, computer maintenance, software support, and Office applications. These are troubleshooting examples, not claims of completed client cases.</p>
+ <details open><summary>Case 1 — Laptop cannot connect to Wi-Fi</summary><dl>
+  <dt>Related skill</dt><dd>Basic networking and Wi-Fi troubleshooting</dd>
+  <dt>Possible causes</dt><dd>Wi-Fi is turned off, airplane mode is on, the device is not connected to the right network, or the router has a connection issue.</dd>
+  <dt>Diagnostic steps</dt><dd>Check airplane mode and Wi-Fi; confirm the network name and password; see whether another device can connect; restart the laptop and, if appropriate, the router.</dd>
+  <dt>Safe next step</dt><dd>If other devices also cannot connect, report the router or internet connection issue to the network owner. If only this laptop is affected, ask for help checking its network settings or adapter.</dd>
+  <dt>Lesson</dt><dd>Check the simplest causes first and compare with another device before changing network settings.</dd></dl></details>
+ <details><summary>Case 2 — Preparing a PC for Windows installation</summary><dl>
+  <dt>Related skill</dt><dd>Windows 10/11 installation and computer maintenance</dd>
+  <dt>Possible causes</dt><dd>The PC may not meet installation requirements, important files may not be backed up, or installation media may be missing.</dd>
+  <dt>Diagnostic steps</dt><dd>Confirm the device and Windows version; check hardware requirements; identify files that need backup; confirm approved installation media and a valid license.</dd>
+  <dt>Safe next step</dt><dd>Do not format or reinstall until the owner approves and important files are backed up. Ask a supervisor for guidance if unsure about the device, license, or installation method.</dd>
+  <dt>Lesson</dt><dd>Preparation, authorization, and data backup come before installation.</dd></dl></details>
+ <details><summary>Case 3 — An application will not open</summary><dl>
+  <dt>Related skill</dt><dd>Software support and application installation</dd>
+  <dt>Possible causes</dt><dd>The application may need an update, may not have installed correctly, or the computer may need to restart.</dd>
+  <dt>Diagnostic steps</dt><dd>Note the error message; check whether other applications open; restart the computer if appropriate; verify the application is from an approved source and check for updates.</dd>
+  <dt>Safe next step</dt><dd>Use the application's normal update or repair option. Before reinstalling, confirm the user has saved work and that the installer is approved.</dd>
+  <dt>Lesson</dt><dd>Record the message and try low-risk checks before changing or reinstalling software.</dd></dl></details>
+ <details><summary>Case 4 — Laptop seems slow or is getting warm</summary><dl>
+  <dt>Related skill</dt><dd>Basic computer maintenance and troubleshooting</dd>
+  <dt>Possible causes</dt><dd>Many applications may be running, vents may be blocked, or the device may need attention from a qualified technician.</dd>
+  <dt>Diagnostic steps</dt><dd>Ask when the issue started; check whether unnecessary applications are open; make sure the laptop is on a hard, flat surface and vents are not covered.</dd>
+  <dt>Safe next step</dt><dd>Save work and close applications the user does not need. Do not open the laptop or attempt internal repairs; escalate persistent overheating, unusual noises, or shutdowns.</dd>
+  <dt>Lesson</dt><dd>Basic external checks are appropriate for my current level; hardware repairs should be handled by a qualified technician.</dd></dl></details>
+ <details><summary>Case 5 — A document or spreadsheet does not display as expected</summary><dl>
+  <dt>Related skill</dt><dd>Microsoft Word, Excel, and PowerPoint basics</dd>
+  <dt>Possible causes</dt><dd>The wrong file may be open, the document may have unsaved changes, or formatting or zoom settings may have changed.</dd>
+  <dt>Diagnostic steps</dt><dd>Confirm the file name; check whether the document is saved; review zoom and page or cell formatting; compare with a known-good copy if available.</dd>
+  <dt>Safe next step</dt><dd>Save a separate copy before changing formatting. If the file will not open or appears damaged, preserve the original and ask for help rather than overwriting it.</dd>
+  <dt>Lesson</dt><dd>Protect the original file and verify changes before considering the issue resolved.</dd></dl></details>
+</section>
+
+<section id="employ">
+ <h2><span>05</span> Employability</h2>
+ <p class="sub">How my current technical skills connect to the entry-level IT Support roles I am preparing for.</p>
+ <div class="grid">
+  <div class="card"><h3>Role I am preparing for</h3>
+   <p>Entry-level IT Support, Help Desk, or Computer Technician Trainee. I can assist with basic computer setup, Windows installation, application installation and updates, and common laptop or Wi-Fi troubleshooting.</p></div>
+  <div class="card"><h3>How I approach support issues</h3><ol class="steps"><li>Ask the user what happened and when it started.</li><li>Check basic hardware, power, settings, and network connections.</li><li>Try a safe, relevant troubleshooting step, such as checking Wi-Fi or restarting an application.</li><li>Confirm whether the issue is resolved and explain the next step clearly.</li><li>Ask for help or escalate when the issue is beyond my current skills.</li></ol></div>
+ </div>
+ <h3 style="margin-top:1.4rem">Skill-aligned development plan</h3>
+ <div class="grid">
+  <div class="card"><h3>Next 6 months</h3><p>Practice Windows installation, computer maintenance, and common software troubleshooting; strengthen my basic Wi-Fi and networking knowledge.</p></div>
+  <div class="card"><h3>First year on the job</h3><p>Apply my current skills in an entry-level support role, document the issues I encounter, and learn the team's tools and escalation process.</p></div>
+  <div class="card"><h3>Long-term growth</h3><p>Build on hands-on support experience to handle a wider range of hardware, Windows, application, and network issues with increasing independence.</p></div>
+ </div>
+ <div class="card" style="margin-top:1rem">
+  <h3>Mock IT Job Interview</h3>
+  <p>A recorded group mock IT job interview with my classmates. We took turns as interviewer and applicant. I interviewed in the second round, then answered questions about introducing myself, why I chose BSIT, my strongest IT skills, and an area I am working to improve.</p>
+  <video class="employability-video" controls preload="metadata">
+   <source src="files/video-presentation.mp4" type="video/mp4">
+   Your browser does not support the video element.
+  </video>
+  <a href="https://drive.google.com/file/d/1YsJ6C8wI0c1zQ5hhgBQuWlIUXEHU1RAq/view?t=3.928" target="_blank" rel="noopener">Watch the interview video on Google Drive</a>
+ </div>
+</section>
+
+<section id="resume">
+ <h2><span>06</span> Resume</h2>
+ <p class="sub">One-page IT resume.</p>
+ <div class="card"><p>Name · Title · Contact · Summary · Skills · Education · Projects · Certifications.</p>
+  <a class="btn p" href="resume.pdf" target="_blank" rel="noopener">DOWNLOAD RESUME (PDF)</a></div>
+</section>
+
+<section id="certs">
+ <h2><span>07</span> Certificates / Achievements</h2>
+ <p class="sub">Webinars and training certificates. Select an image to view it full size.</p>
+ <div class="grid">
+  <article class="card certificate-card">
+   <a href="certificates/certificate-linux-system-admin.png" target="_blank" rel="noopener" aria-label="View Linux and System Administration certificate full size"><img src="certificates/certificate-linux-system-admin.png" alt="Certificate of participation in Linux and System Administration: Master the Command Line" loading="lazy" decoding="async"></a>
+   <h3>Linux &amp; System Administration: Master the Command Line</h3>
+   <p>Ethel Programming Computer Programming Services · August 7, 2026</p>
+  </article>
+  <article class="card certificate-card">
+   <a href="certificates/certificate-arduino-embedded.png" target="_blank" rel="noopener" aria-label="View Next Gen Arduino certificate full size"><img src="certificates/certificate-arduino-embedded.png" alt="Certificate of participation in Next Gen Arduino: Innovation Through Embedded Technology" loading="lazy" decoding="async"></a>
+   <h3>Next Gen Arduino: Innovation Through Embedded Technology</h3>
+   <p>Ethel Programming Computer Programming Services · August 6, 2026</p>
+  </article>
+  <article class="card certificate-card">
+   <a href="certificates/certificate-network-security.png" target="_blank" rel="noopener" aria-label="View Network Security certificate full size"><img src="certificates/certificate-network-security.png" alt="Certificate of participation in The Future of Network Security, AI, Automation and Zero Trust" loading="lazy" decoding="async"></a>
+   <h3>The Future of Network Security, AI, Automation and Zero Trust</h3>
+   <p>Ethel Programming Computer Programming Services · August 5, 2026</p>
+  </article>
+  <article class="card certificate-card">
+   <a href="certificates/certificate-digital-office.png" target="_blank" rel="noopener" aria-label="View Digital Office Mastery certificate full size"><img src="certificates/certificate-digital-office.png" alt="Certificate of participation in Digital Office Mastery: Essential Skills for Computer and Administrative Staff" loading="lazy" decoding="async"></a>
+   <h3>Digital Office Mastery: Essential Skills for Computer &amp; Administrative Staff</h3>
+   <p>Ethel Programming Computer Programming Services · August 5, 2026</p>
+  </article>
+  <article class="card certificate-card">
+   <a href="certificates/certificate-web-development.png" target="_blank" rel="noopener" aria-label="View web development certificate full size"><img src="certificates/certificate-web-development.png" alt="Certificate of participation in Code, Create, Deploy: A hands-on introduction to building and publishing website" loading="lazy" decoding="async"></a>
+   <h3>Code, Create, Deploy: A Hands-on Introduction to Building and Publishing Websites</h3>
+   <p>Ethel Programming Computer Programming Services · August 4, 2026</p>
+  </article>
+ </div>
+</section>
+
+<section id="github">
+ <h2><span>08</span> GitHub &amp; LinkedIn</h2>
+ <p class="sub">Visit my project repositories or professional profile.</p>
+ <div class="card"><p>Find my portfolio projects, technical documentation, and professional profile.</p>
+  <a class="btn p" href="https://github.com/rachellealipio13-crypto" target="_blank" rel="noopener">VISIT MY GITHUB</a>
+  <a class="btn s" id="linkedin" href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank" rel="noopener">VISIT MY LINKEDIN</a>
+  <p class="sub" style="margin-top:1rem">Replace <code>your-linkedin-username</code> in the LinkedIn links with your profile username.</p></div>
+</section>
+
+<section id="contact">
+ <h2><span>09</span> Contact</h2>
+ <p class="sub">rachellealipio13@gmail.com . Email</p>
+ <p class="sub">rachellealipio13@gmail.com · GitHub</p>
+ <P class="sub">reshuloxd13@gmail.com ·LinkedIn</P>
+ <p class="sub">Contact: 09462573397</p>
+ <p class="sub">location:Paranaque City</p>
+ <div class="card"><form id="cf"><input id="n" placeholder="Your name" required><input id="e" type="email" placeholder="Your email" required><textarea id="m" rows="4" placeholder="Message" required></textarea><button class="btn p" type="submit">Send via email app</button><small id="st"></small></form></div>
+</section>
+
+<section id="reflect">
+ <h2><span>10</span> Reflection</h2>
+ <p class="sub">500–800 words.</p>
+ <div class="card"><p>Before BSIT, I only knew how to use a computer for school work. I took TVL-ICT in senior high school, so I knew a little about computer parts.
+
+</p>In BSIT, I learned how to fix simple computer problems, how the internet and Wi-Fi work, and how to install Windows. I also learned how to make a simple website. The most important thing I learned is to fix a problem step by step and not to panic.
+
+</p>The project that taught me the most was this portfolio website. I learned how to organize my work and show my skills. The hardest part for me was fixing errors when something did not work. I learned to be patient and try again.
+
+</p>My skills have improved, but I am still a beginner. I want to get better at networking and at repairing computers. I also want to be more confident when helping other people with their computer problems.
+
+</p>I want to become a good IT Support staff who is helpful, patient, and reliable. I am ready to start my career because I have the basic skills and I am willing to keep learning.</p></div>
+</section>
+
+<footer>© <span id="y"></span> <span class="ph">Rachelle Ann B. Alipio</span> · BSIT · Datamex College of Saint Adeline</footer>
+<script src="script.js"></script>
+</body>
+</html>
